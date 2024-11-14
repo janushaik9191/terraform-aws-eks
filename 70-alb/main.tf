@@ -2,7 +2,7 @@ module "ingress_alb" {
   source = "terraform-aws-modules/alb/aws"
 
   internal = false
-  name    = "${local.resource_name}-ingress-alb" #expense-dev-app-alb
+  name    = "${local.resource_name}-ingress-alb" #expense-dev-ingress-alb
   vpc_id  = local.vpc_id
   subnets = local.public_subnet_ids
   security_groups = [data.aws_ssm_parameter.ingress_alb_sg_id.value]
